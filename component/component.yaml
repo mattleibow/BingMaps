@@ -1,0 +1,27 @@
+%YAML 1.2
+---
+
+name: Bing Maps iOS SDK
+id: bingmapscontrol
+version: 1.1.0.0
+publisher: .NET Development Addict
+summary: The Bing Maps iOS Control is an Xamarin.iOS binding of a control for embedding maps directly into native iOS apps.
+
+publisher-url: http://www.dotnetdevaddict.co.za/projects/bing-maps-ios-sdk
+
+details: Details.md
+getting-started: GettingStarted.md
+license: License.md
+
+libraries: 
+  ios: ../lib/ios/Awesome.dll
+
+samples: 
+  iOS Sample: ../samples/AwesomeSample/AwesomeSample.sln
+
+screenshots: 
+  - screenshots/screenshot1.png
+
+icons: 
+  - icons/bingmapscontrol_128x128.png
+  - icons/bingmapscontrol_512x512.png
