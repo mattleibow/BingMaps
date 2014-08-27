@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{F5B4F3BC-B597-4E2B-B552-EF5D8A32436F};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{2FB3CC1F-F03E-4675-BD29-5412D2994328}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>BingMaps</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>BingMaps</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="monotouch" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingApiDefinition Include="ApiDefinition.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingCoreSource Include="StructsAndEnums.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Xamarin.ObjcBinding.CSharp.targets" />
+  <ItemGroup>
+    <ObjcBindingNativeLibrary Include="libBingMaps.a" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="libBingMaps.linkwith.cs">
+      <DependentUpon>libBingMaps.a</DependentUpon>
+    </Compile>
+    <Compile Include="Extras.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="BingMaps.Resources.bundle\BICoreDataCache.mom" />
+    <BundleResource Include="BingMaps.Resources.bundle\bingmaps_logo.png" />
+    <BundleResource Include="BingMaps.Resources.bundle\bingmaps_logo%402x.png" />
+    <BundleResource Include="BingMaps.Resources.bundle\blue_selected_comp.png" />
+    <BundleResource Include="BingMaps.Resources.bundle\blue_selected_comp%402x.png" />
+    <BundleResource Include="BingMaps.Resources.bundle\blue_unselected.png" />
+    <BundleResource Include="BingMaps.Resources.bundle\blue_unselected%402x.png" />
+    <BundleResource Include="BingMaps.Resources.bundle\blue_unselected_comp.png" />
+    <BundleResource Include="BingMaps.Resources.bundle\blue_unselected_comp%402x.png" />
+    <BundleResource Include="BingMaps.Resources.bundle\BMMapCalloutView.nib" />
+    <BundleResource Include="BingMaps.Resources.bundle\callout_white.png" />
+    <BundleResource Include="BingMaps.Resources.bundle\callout_white%402x.png" />
+    <BundleResource Include="BingMaps.Resources.bundle\green_selected_comp.png" />
+    <BundleResource Include="BingMaps.Resources.bundle\green_selected_comp%402x.png" />
+    <BundleResource Include="BingMaps.Resources.bundle\green_unselected.png" />
+    <BundleResource Include="BingMaps.Resources.bundle\green_unselected%402x.png" />
+    <BundleResource Include="BingMaps.Resources.bundle\green_unselected_comp.png" />
+    <BundleResource Include="BingMaps.Resources.bundle\green_unselected_comp%402x.png" />
+    <BundleResource Include="BingMaps.Resources.bundle\Info.plist" />
+    <BundleResource Include="BingMaps.Resources.bundle\mapConfiguration.plist" />
+    <BundleResource Include="BingMaps.Resources.bundle\me_dot_128.png" />
+    <BundleResource Include="BingMaps.Resources.bundle\networkDefaults.plist" />
+    <BundleResource Include="BingMaps.Resources.bundle\orange_selected_comp.png" />
+    <BundleResource Include="BingMaps.Resources.bundle\orange_selected_comp%402x.png" />
+    <BundleResource Include="BingMaps.Resources.bundle\orange_unselected.png" />
+    <BundleResource Include="BingMaps.Resources.bundle\orange_unselected%402x.png" />
+    <BundleResource Include="BingMaps.Resources.bundle\orange_unselected_comp.png" />
+    <BundleResource Include="BingMaps.Resources.bundle\orange_unselected_comp%402x.png" />
+    <BundleResource Include="BingMaps.Resources.bundle\purple_selected_comp.png" />
+    <BundleResource Include="BingMaps.Resources.bundle\purple_selected_comp%402x.png" />
+    <BundleResource Include="BingMaps.Resources.bundle\purple_unselected.png" />
+    <BundleResource Include="BingMaps.Resources.bundle\purple_unselected%402x.png" />
+    <BundleResource Include="BingMaps.Resources.bundle\purple_unselected_comp.png" />
+    <BundleResource Include="BingMaps.Resources.bundle\purple_unselected_comp%402x.png" />
+    <BundleResource Include="BingMaps.Resources.bundle\red_selected_comp.png" />
+    <BundleResource Include="BingMaps.Resources.bundle\red_selected_comp%402x.png" />
+    <BundleResource Include="BingMaps.Resources.bundle\red_unselected.png" />
+    <BundleResource Include="BingMaps.Resources.bundle\red_unselected%402x.png" />
+    <BundleResource Include="BingMaps.Resources.bundle\red_unselected_comp.png" />
+    <BundleResource Include="BingMaps.Resources.bundle\red_unselected_comp%402x.png" />
+    <BundleResource Include="BingMaps.Resources.bundle\shadow.png" />
+    <BundleResource Include="BingMaps.Resources.bundle\shadow%402x.png" />
+    <BundleResource Include="BingMaps.Resources.bundle\yellow_selected_comp.png" />
+    <BundleResource Include="BingMaps.Resources.bundle\yellow_selected_comp%402x.png" />
+    <BundleResource Include="BingMaps.Resources.bundle\yellow_unselected.png" />
+    <BundleResource Include="BingMaps.Resources.bundle\yellow_unselected%402x.png" />
+    <BundleResource Include="BingMaps.Resources.bundle\yellow_unselected_comp.png" />
+    <BundleResource Include="BingMaps.Resources.bundle\yellow_unselected_comp%402x.png" />
+  </ItemGroup>
+</Project>
