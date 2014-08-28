@@ -82,7 +82,7 @@ namespace BingMaps
 
 		// @required - (id)initWithMarker:(id<BMMarker>)marker reuseIdentifier:(NSString *)reuseIdentifier;
 		[Export ("initWithMarker:reuseIdentifier:")]
-		IntPtr Constructor (BMMarker marker, string reuseIdentifier);
+		IntPtr Constructor (BMMarker marker, [NullAllowed] string reuseIdentifier);
 
 		// @property (nonatomic) BMPushpinColor pinColor;
 		[Export ("pinColor")]
@@ -224,7 +224,7 @@ namespace BingMaps
 
 		// @required - (id)dequeueReusableMarkerViewWithIdentifier:(NSString *)identifier;
 		[Export ("dequeueReusableMarkerViewWithIdentifier:")]
-		BMMarkerView DequeueReusableMarkerView (string identifier);
+		BMMarkerView DequeueReusableMarkerView ( [NullAllowed] string identifier);
 
 		// @required - (void)selectMarker:(id)marker animated:(BOOL)animated;
 		[Export ("selectMarker:animated:")]
@@ -266,7 +266,7 @@ namespace BingMaps
 
 		// @optional - (id)mapView:(BMMapView *)mapView viewForMarker:(id)marker;
 		[Export ("mapView:viewForMarker:")]
-		[DelegateName ("BMMapViewGetMarkerViewCallback"), DefaultValue ("null")]
+		[DelegateName ("BMMapViewGetMarkerViewCallback"), DefaultValue ("BMMapView.GetDefaultMarkerView (marker)")]
 		BMMarkerView GetMarkerView (BMMapView mapView, BMMarker marker);
 
 		// @optional - (void)mapView:(BMMapView *)mapView didAddMarkerViews:(NSArray *)views;
@@ -285,7 +285,7 @@ namespace BingMaps
 
 		// @required - (id)initWithMarker:(id<BMMarker>)marker reuseIdentifier:(NSString *)reuseIdentifier;
 		[Export ("initWithMarker:reuseIdentifier:")]
-		IntPtr Constructor (BMMarker marker, string reuseIdentifier);
+		IntPtr Constructor (BMMarker marker, [NullAllowed] string reuseIdentifier);
 
 		// @property (readonly, nonatomic) NSString * reuseIdentifier;
 		[Export ("reuseIdentifier")]
@@ -297,6 +297,7 @@ namespace BingMaps
 
 		// @property (retain, nonatomic) UIImage * image;
 		[Export ("image", ArgumentSemantic.Retain)]
+		[NullAllowed]
 		UIImage Image { get; set; }
 
 		// @property (nonatomic) CGPoint centerOffset;
@@ -321,10 +322,12 @@ namespace BingMaps
 
 		// @property (retain, nonatomic) UIView * calloutAccessoryView1;
 		[Export ("calloutAccessoryView1", ArgumentSemantic.Retain)]
+		[NullAllowed]
 		UIView CalloutAccessoryView1 { get; set; }
 
 		// @property (retain, nonatomic) UIView * calloutAccessoryView2;
 		[Export ("calloutAccessoryView2", ArgumentSemantic.Retain)]
+		[NullAllowed]
 		UIView CalloutAccessoryView2 { get; set; }
 
 		// @required - (void)prepareForReuse;

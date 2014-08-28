@@ -79,6 +79,20 @@ namespace BingMaps
 			return region;
 		}
 
+		public static BMMarkerView GetDefaultMarkerView(BMMarker marker)
+		{
+			BMPushpinView pinView = new BMPushpinView (marker, null);
+
+			pinView.PinColor = BMPushpinColor.Orange;
+			pinView.AnimatesDrop = true;
+
+			pinView.CanShowCallout = true;
+			pinView.Enabled = true;
+			pinView.Opaque = false;
+
+			return pinView;
+		}
+
 	}
 }
 
